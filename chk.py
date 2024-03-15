@@ -16,15 +16,15 @@ def daxx(card_number):
         total += sum(divmod(digit * 2, 10))
 
     return emoji.emojize("""
-    \nResult  ➠ 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅ \n
-     Response: Approved $15 ✅ \n
+     Result  ➠ 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅ 
+     Response: Approved $15 ✅ 
      Seller Message:Payment complete.
      ⊗ Status  ➠ Live 🟢
      ⊗ GATEWAY- STRIPE AUTH  ♻️""") if total % 10 == 0 else emoji.emojize("""
-    \nResult  ➠   DECLINED ❌\n
-     Response: card_declined ❌\n
-     Seller Message: Payment incomplete.\n
-     ⊗ Status  ➠ Dead 🚫\n
+     Result  ➠   DECLINED ❌
+     Response: card_declined ❌
+     Seller Message: Payment incomplete.
+     ⊗ Status  ➠ Dead 🚫
      ⊗ GATEWAY- STRIPE AUTH  ♻️""")
 
 def get_credit_card_info(card_number):
@@ -247,7 +247,7 @@ def get_credit_card_info(card_number):
         network_brand = network_patterns[card_number[0]]
 
     return {
-        "⊗ 𝗚𝗔𝗧𝗘𝗪𝗔𝗬- 𝗦𝗧𝗥𝗜𝗣𝗘 𝗔𝗨𝗧𝗛  $𝟭𝟱♻️": daxx(card_number),
+        "𝗚𝗔𝗧𝗘𝗪𝗔𝗬- 𝗦𝗧𝗥𝗜𝗣𝗘 𝗔𝗨𝗧𝗛 $𝟭𝟱♻️": daxx(card_number),
         "𝗠𝗜𝗜": mii + " - " + mii_categories.get(mii, "Unknown Category"),
         "𝗕𝗔𝗡𝗞 𝗡𝗔𝗠𝗘": bank_name,
         "𝗕𝗔𝗡𝗞 𝗖𝗢𝗨𝗡𝗧𝗥𝗬": bank_country,
@@ -265,7 +265,7 @@ print("""
 ░█▄▄█ ▄█▄ ─░█── 　 ░█▄▀▄█ ▄█▄ ░█▄▄▄█ ░█─░█ ░█─░█ ░█▄▄▀
                 𝗠𝗔𝗗𝗘 𝗕𝗬 @IAM_DAXX | @GITWIZARD\n
 """)
-credit_card_number = input("𝗣𝗔𝗦𝗧𝗘 𝗬𝗢𝗨𝗥 𝗖𝗔𝗥𝗗 𝗡𝗨𝗠𝗕𝗘𝗥:\n")
+credit_card_number = input("𝗣𝗔𝗦𝗧𝗘 𝗬𝗢𝗨𝗥 𝗖𝗔𝗥𝗗 𝗡𝗨𝗠𝗕𝗘𝗥\n:")
 credit_card_info = get_credit_card_info(credit_card_number)
 for key, value in credit_card_info.items():
     print(f"{key}: {value}\n")
